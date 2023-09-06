@@ -1,0 +1,93 @@
+    <!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Datos de usuario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Datos del usuario</h1>
+        <a th:href="@{/}">Regresar</a>
+        <br/>
+        <form th:action="@{/guardar}"method="POST"th:object="${usuario}">
+            <br/>
+            <label for="cedula">CEDULA</label>
+            <input type="text" name="cedula" th:field="*{cedula}"required/>
+            <br/>
+            <label for="cedula">CLAVE</label>
+            <input type="password" name="clave" th:field="*{clave}"/>
+            <br/>
+            <label for="cedula">NOMBRE</label>
+            <input type="text" name="nombre" th:field="*{nombre}"required/>
+            <br/>
+            <label for="cedula">EMAIL</label>
+            <input type="email" name="email" th:field="*{email}"required/>
+            <br/>
+            <input type="reset"  value="LIMPIAR"/>&nbsp;&nbsp;&nbsp;
+            <input type="submit"  name="guardar" value="GUARDAR"/>
+            <br/>
+        </form>
+          <style>
+
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f2f2f2;
+                    margin: 0;
+                    padding: 0;
+                    text-align: center;
+                }
+                h1 {
+                    color: #333;
+                }
+                a {
+                    color: #007bff;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }
+                form {
+                    width: 400px;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    padding: 30px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                label {
+                    display: block;
+                    text-align: left;
+                    margin-top: 10px;
+                    color: #333;
+                }
+                input[type="text"],
+                input[type="password"],
+                input[type="email"] {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                }
+                input[type="reset"],
+                input[type="submit"] {
+                    background-color: #007bff;
+                    color: #fff;
+                    border: none;
+                    padding: 10px 20px;
+                    margin-top: 10px;
+                    cursor: pointer;
+                }
+
+                input[type="reset"]:hover,
+                input[type="submit"]:hover {
+                    background-color: #0056b3;
+                }
+        </style>
+    </body>
+</html>
